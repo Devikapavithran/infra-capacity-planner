@@ -1,12 +1,29 @@
 #!/bin/bash
 
 echo "=============================="
-echo " Server setup started "
+echo " Starting Server Provisioning "
 echo "=============================="
 
-# Update system packages
+# Update packages
 sudo apt update -y
+sudo apt upgrade -y
 
-echo "System update completed"
+echo "System updated"
 
-echo "Server setup completed successfully"
+# Install Python
+sudo apt install python3 -y
+
+echo "Python installed"
+
+# Install Nginx
+sudo apt install nginx -y
+
+echo "Nginx installed"
+
+# Start Nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+echo "Nginx started successfully"
+
+echo "✅ Server provisioning completed!"
